@@ -1,4 +1,4 @@
-package ru.test.EffecticeMobileTestWork.model;
+package ru.test.EffectiveMobileTestWork.model;
 
 import jakarta.persistence.*;
 

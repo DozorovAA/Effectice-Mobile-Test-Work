@@ -1,8 +1,8 @@
-package ru.test.EffecticeMobileTestWork.repo;
+package ru.test.EffectiveMobileTestWork.repo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-import ru.test.EffecticeMobileTestWork.model.Task;
+import ru.test.EffectiveMobileTestWork.model.Task;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {

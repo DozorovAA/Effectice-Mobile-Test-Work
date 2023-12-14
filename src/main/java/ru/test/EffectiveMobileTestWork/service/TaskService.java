@@ -1,11 +1,9 @@
-package ru.test.EffecticeMobileTestWork.service;
+package ru.test.EffectiveMobileTestWork.service;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-import ru.test.EffecticeMobileTestWork.model.Task;
-import ru.test.EffecticeMobileTestWork.repo.TaskRepository;
+import ru.test.EffectiveMobileTestWork.model.Task;
+import ru.test.EffectiveMobileTestWork.repo.TaskRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

@@ -1,4 +1,4 @@
-package ru.test.EffecticeMobileTestWork;
+package ru.test.EffectiveMobileTestWork;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
