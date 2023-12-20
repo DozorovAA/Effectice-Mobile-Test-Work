@@ -27,7 +27,7 @@ public class PostgresConfig {
             @Value("${app.db.url:jdbc:postgresql://localhost:5432/kanban}") String url,
             @Value("${app.db.user:user}") String userName,
             @Value("${app.db.password:pass}") String password,
-            @Value("${app.db.ddlAuto:update}") String ddlAuto)
+            @Value("${app.db.ddl-auto:update}") String ddlAuto)
     {
         this.url = url;
         this.userName = userName;
