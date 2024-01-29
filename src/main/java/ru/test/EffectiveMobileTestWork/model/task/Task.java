@@ -1,6 +1,7 @@
 package ru.test.EffectiveMobileTestWork.model.task;
 
 import jakarta.persistence.*;
+import ru.test.EffectiveMobileTestWork.model.user.User;
 
 @Entity
 public class Task {
@@ -12,6 +13,11 @@ public class Task {
     private String description;
     private Priority priority;
     private Status status;
+    @ManyToOne
+    @JoinColumn(name = "author_id", nullable = false)
+    private User author;
+    @Column(name = "executor_Id")
+    private String executorId;
     private String comment;
     public void apply(TaskPatch taskPatch){
         if(taskPatch.getDescription() != null) setDescription(taskPatch.getDescription());
@@ -19,6 +25,8 @@ public class Task {
         if(taskPatch.getPriority() != null)    setPriority(taskPatch.getPriority());
         if(taskPatch.getTitle() != null)       setTitle(taskPatch.getTitle());
         if(taskPatch.getComment() != null)     setComment(taskPatch.getComment());
+        if(taskPatch.getAuthor() != null)      setAuthor(taskPatch.getAuthor());
+        if(taskPatch.getExecutorId() != null)  setExecutor(taskPatch.getExecutorId());
     }
     public Task() {
     }
@@ -66,20 +74,27 @@ public class Task {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Task{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                '}';
-    }
-
     public String getComment() {
         return comment;
     }
 
     public void setComment(String comment) {
         this.comment = comment;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public String getExecutor() {
+        return executorId;
+    }
+
+    public void setExecutor(String executor) {
+        this.executorId = executorId;
     }
 }

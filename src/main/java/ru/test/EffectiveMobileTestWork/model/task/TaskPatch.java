@@ -1,5 +1,7 @@
 package ru.test.EffectiveMobileTestWork.model.task;
 
+import ru.test.EffectiveMobileTestWork.model.user.User;
+
 public class TaskPatch {
     private Long id;
     private String title;
@@ -7,6 +9,9 @@ public class TaskPatch {
     private Priority priority;
     private Status status;
     private String comment;
+    private User author;
+    private String executorId;
+
 
     public TaskPatch() {
     }
@@ -57,5 +62,21 @@ public class TaskPatch {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public User getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(User author) {
+        this.author = author;
+    }
+
+    public String getExecutorId() {
+        return executorId;
+    }
+
+    public void setExecutorId(String executorId) {
+        this.executorId = executorId;
     }
 }

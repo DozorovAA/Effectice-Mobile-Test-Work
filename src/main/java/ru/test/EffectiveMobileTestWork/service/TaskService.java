@@ -42,4 +42,8 @@ public class TaskService {
         else
             throw new RuntimeException();
     }
+
+    public List<Task> getAllExecutorTask(String id) {
+        return taskRepository.findByExecutorId(id);
+    }
 }

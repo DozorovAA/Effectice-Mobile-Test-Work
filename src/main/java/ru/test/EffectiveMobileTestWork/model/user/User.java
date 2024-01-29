@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import ru.test.EffectiveMobileTestWork.model.task.Task;
 
 import java.util.Collection;
 import java.util.List;
@@ -20,11 +21,14 @@ public class User implements UserDetails {
     private String pass;
     @Enumerated(EnumType.STRING)
     private Role role;
+    @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
+    private List<Task> tasks;
 
     public User() {
     }
 
     public User(Integer id, String firstName, String lastName, String email, String pass, Role role) {
+
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -113,5 +117,13 @@ public class User implements UserDetails {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
     }
 }

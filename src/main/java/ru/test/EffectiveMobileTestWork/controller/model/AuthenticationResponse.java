@@ -1,4 +1,4 @@
-package ru.test.EffectiveMobileTestWork.controller.auth;
+package ru.test.EffectiveMobileTestWork.controller.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
